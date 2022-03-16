@@ -121,6 +121,8 @@ exports.addProduct = async (req, res) => {
       return { idProduct: newProduct.id, idCategory: parseInt(item) };
     });
 
+    console.log(productCategoryData)
+
     await productCategory.bulkCreate(productCategoryData);
 
     let productData = await product.findOne({
